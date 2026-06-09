@@ -9,6 +9,18 @@ Board-ready Kinetic Gain surface for referral-driven B2B waitlists, cohort pacin
 
 Leaders need one waitlist surface that shows which referral lanes are compounding qualified demand, which incentives are distorting launch quality, and where activation pressure should move before the next go-to-market push.
 
+## What this product does
+
+B2B Viral Waitlist turns launch interest, referral channels, accepted invites, activation quality, and incentive rules into one governed launch surface. It connects cohort source, audience, invite volume, accepted accounts, referral rate, boost logic, leaderboard posture, and launch-readiness checks in one operating view.
+
+For a SaaS go-to-market analyst, the product answers which waitlist lanes create qualified demand, which channels only create vanity volume, and where product marketing, sales, partnerships, or community teams should intervene before launch capacity gets wasted.
+
+For a SaaS value architect, it exposes where launch value leaks: weak cohort quality, over-weighted incentives, leaderboard gaming, referrals that do not activate, and launch motions that overwhelm onboarding or sales without producing buyer-ready accounts.
+
+For technical reviewers, the repo includes static routes, API-style outputs, seeded cohort data, leaderboard scoring, artifact samples, verification checks, prerendered pages, smoke tests, and screenshot generation. It is meant to demonstrate an inspectable operator surface, not a keyword-only landing page.
+
+This follows the broader Kinetic Gain pattern: every surface keeps owner, signal, model, risk, value, route, and verification visible together so non-technical and technical readers can understand what the system does and why it matters.
+
 ## What it includes
 
 - TypeScript control plane for referral-driven B2B waitlists, leaderboard scoring, invite cohorts, and activation-aware growth loops

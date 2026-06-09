@@ -160,6 +160,37 @@ function healthPill(health: "healthy" | "watch" | "critical") {
   return `<span class="pill ${cls}">${health}</span>`;
 }
 
+function renderProductDepth() {
+  return `
+    <section class="content-grid">
+      <article class="panel span-6">
+        <p class="panel-title">Product depth</p>
+        <h2>What this product does</h2>
+        <p>B2B Viral Waitlist turns launch interest, referral channels, accepted invites, activation quality, and incentive rules into one governed launch surface. Non-technical leaders see whether demand is compounding cleanly. Technical teams see the cohort, score, boost rule, artifact, and verification logic behind the waitlist.</p>
+      </article>
+      <article class="panel span-6">
+        <p class="panel-title">GTM analyst lens</p>
+        <h2>Where growth teams use it</h2>
+        <p>Use it to compare founder-led, partner-led, product-led, and social invite lanes by qualified activation instead of raw signups. It shows which referral paths deserve more launch capacity and which incentives are creating vanity volume or low-fit demand.</p>
+      </article>
+      <article class="panel span-6">
+        <p class="panel-title">Value architecture</p>
+        <h2>Where launch value leaks</h2>
+        <p>The system surfaces leakage from weak cohort quality, over-weighted incentives, leaderboard gaming, referral loops that do not activate, and launch pushes that create volume without buyer readiness. Leaders can protect scarce sales and onboarding capacity before the launch wave hits.</p>
+      </article>
+      <article class="panel span-6">
+        <p class="panel-title">Technical proof</p>
+        <h2>What is inspectable</h2>
+        <p>Static routes, API-style outputs, seeded waitlist cohorts, leaderboard scoring, launch artifacts, verification checks, prerendering, tests, smoke checks, and screenshot generation keep this as a real operator surface rather than generic marketing copy.</p>
+      </article>
+      <article class="panel span-12">
+        <p class="panel-title">Portfolio pattern</p>
+        <h2>What these repos have in common</h2>
+        <p>Each Kinetic Gain surface converts operational evidence into board-readable decisions: owner, signal, model, risk, value, route, and verification stay visible together.</p>
+      </article>
+    </section>`;
+}
+
 export function renderOverview() {
   const dashboard = summary();
   const cohorts = referralLane();
@@ -250,6 +281,7 @@ export function renderOverview() {
         </div>
       </article>
     </section>
+    ${renderProductDepth()}
   `;
 
   return layout("B2B Viral Waitlist", "/", body);
@@ -426,6 +458,7 @@ export function renderDocs() {
         </ul>
       </article>
     </section>
+    ${renderProductDepth()}
   `;
 
   return layout("B2B Viral Waitlist - Docs", "/docs", body);
