@@ -18,7 +18,7 @@ const routes = [
 ];
 
 async function request(port: number, path: string) {
-  return new Promise<number>((resolve, reject) => {
+  return new Promise<{ status: number; body: string }>((resolve, reject) => {
     const req = http.request(
       {
         hostname: "127.0.0.1",
@@ -27,8 +27,12 @@ async function request(port: number, path: string) {
         method: "GET"
       },
       (res) => {
-        res.resume();
-        res.on("end", () => resolve(res.statusCode ?? 0));
+        let body = "";
+        res.setEncoding("utf8");
+        res.on("data", (chunk) => {
+          body += chunk;
+        });
+        res.on("end", () => resolve({ status: res.statusCode ?? 0, body }));
       }
     );
 
@@ -44,9 +48,17 @@ async function main() {
 
   try {
     for (const path of routes) {
-      const status = await request(port, path);
+      const { status, body } = await request(port, path);
       if (status !== 200) {
         throw new Error(`Smoke check failed for ${path} with status ${status}`);
+      }
+
+      if (!path.startsWith("/api/")) {
+        for (const marker of ["Product depth", "What these repos have in common", "Portfolio", "GitHub", "Kinetic Gain"]) {
+          if (!body.includes(marker)) {
+            throw new Error(`Smoke check failed for ${path}; missing marker: ${marker}`);
+          }
+        }
       }
     }
     console.log("smoke ok");

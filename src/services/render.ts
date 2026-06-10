@@ -130,6 +130,11 @@ function layout(title: string, activePath: string, body: string) {
         color: #d8f8f5; white-space: pre-wrap; font-family: Consolas, monospace; line-height: 1.6;
       }
       ul.docs-list { margin: 12px 0 0 18px; color: var(--muted); line-height: 1.75; }
+      .footer-note {
+        margin-top: 24px; padding: 18px 4px 0; color: #88a5d4;
+        font-size: 13px; letter-spacing: 0.04em;
+      }
+      .footer-note a { color: #d8f8f5; }
       @media (max-width: 1100px) {
         .hero-grid, .stats { grid-template-columns: 1fr; }
         .panel.span-6, .panel.span-12 { grid-column: span 12; }
@@ -150,6 +155,17 @@ function layout(title: string, activePath: string, body: string) {
         <nav>${nav}</nav>
       </div>
       ${body}
+      <footer class="footer-note">
+        B2B Viral Waitlist
+        <span aria-hidden="true"> / </span>
+        <a href="http://waitlist.kineticgain.com/">waitlist.kineticgain.com</a>
+        <span aria-hidden="true"> / </span>
+        <a href="https://github.com/mizcausevic-dev/b2b-viral-waitlist">GitHub</a>
+        <span aria-hidden="true"> / </span>
+        <a href="https://portfolio.kineticgain.com/">Portfolio</a>
+        <span aria-hidden="true"> / </span>
+        <a href="https://kineticgain.com/">Kinetic Gain</a>
+      </footer>
     </div>
   </body>
 </html>`;
@@ -300,6 +316,7 @@ export function renderReferralLane() {
         </div>
       </div>
     </section>
+    ${renderProductDepth()}
     <section class="content-grid">
       <article class="panel span-12">
         <p class="panel-title">Referral Cohorts</p>
@@ -345,6 +362,7 @@ export function renderLeaderboardLab() {
         </div>
       </div>
     </section>
+    ${renderProductDepth()}
     <section class="content-grid">
       <article class="panel span-6">
         <p class="panel-title">Leaderboard Entries</p>
@@ -404,6 +422,7 @@ export function renderVerification() {
         </div>
       </div>
     </section>
+    ${renderProductDepth()}
     <section class="content-grid">
       <article class="panel span-12">
         <p class="panel-title">Verification Checks</p>
